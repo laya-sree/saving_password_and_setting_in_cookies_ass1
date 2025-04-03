@@ -15,9 +15,18 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // 1. Get the value of the 'count' cookie
+  let count = getCookie('count');
+
   // 2. If the cookie exists, increment the value and update the cookie
+  count++;
+
   // 3. If the cookie does not exist, create it and set the value to 1
-  // 4. Display the count on the webpage
+  setCookie('count', count, 7);
+
+  // 4. Display the count on the webpage\
+  let countDisplay = document.createElement('div');
+  countDisplay.textContent = 'Cookie Count: ' + count;
+  document.body.appendChild(countDisplay);
 
   // your code here
 });
